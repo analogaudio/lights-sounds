@@ -327,9 +327,6 @@ footer .r2{border-top:1px solid rgba(255,255,255,.04);padding:16px 0}
 footer .r2 .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2)}
 footer .r2 span{display:flex;align-items:center;gap:8px}
 footer .r2 .pt{height:4px;width:4px;border-radius:50%;background:var(--red);flex:none}
-.float{position:fixed;bottom:20px;right:20px;z-index:60}
-.float a{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 20px;border-radius:99px;background:var(--red);font-size:13px;font-weight:700;box-shadow:0 8px 30px rgba(225,29,37,.5);transition:background .2s}
-.float a:hover{background:var(--red-hi)}
 section[id]{scroll-margin-top:68px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 </style>
@@ -602,7 +599,6 @@ section[id]{scroll-margin-top:68px}
   </div></div>
 </footer>
 
-<div class="float"><a data-tel><svg class="ic"><use href="#i-phone"/></svg> Call <span data-phone></span></a></div>
 <div class="toast" id="toast" role="status" aria-live="polite">Package copied</div>
 
 <script>
@@ -622,9 +618,9 @@ section[id]{scroll-margin-top:68px}
     {id:"F",code:"Gold",name:"Gold Package",price:"P15,999",duration:"5 Hours",items:["6 Full-Range Speakers","6 Subwoofers","1 Audio Mixer","1 Laptop","4 Wireless Microphones","2 Wired Microphones","16 Front Lights","8 Backdrop Lights","8 COB Lights (Amber/White)","8 Moving Head Lights","2 ArtNet/sACN Light Controllers","2 Crank Light Stands","1 Power Controller","2 Powered Amplifiers","2 Equalizers","2 Crossovers","1 Maximizer","1 Exciter","2 Smoke/Fog Machines"]}
   ];
   var VIDEOS = [
-    {id:"vxcXgPwGd00",title:"Grand Setup — Full Production",meta:"16 front lights • 8 movers • Gold"},
-    {id:"kfSF45FEZvg",title:"Wedding Vibes — Premium Package",meta:"Warm COB amber • Clean audio"},
-    {id:"GzZGlJ9w3kc",title:"Concert Energy — Platinum",meta:"6 subs • Exciter • 2 foggers"}
+    {id:"vxcXgPwGd00"},
+    {id:"kfSF45FEZvg"},
+    {id:"GzZGlJ9w3kc"}
   ];
 
   /* ---------- helpers ---------- */
@@ -717,8 +713,7 @@ section[id]{scroll-margin-top:68px}
 
   /* ---------- videos (lazy iframes) ---------- */
   $('#vgrid').innerHTML = VIDEOS.map(function(v){
-    return '<div class="v"><div class="fr"><iframe loading="lazy" src="https://www.youtube.com/embed/'+v.id+'" title="'+esc(v.title)+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'+
-      '<div class="cap"><div><b>'+esc(v.title)+'</b><small>'+esc(v.meta)+'</small></div><div class="ar">'+icon('arrow','w14')+'</div></div></div>';
+    return '<div class="v"><div class="fr"><iframe loading="lazy" src="https://www.youtube.com/embed/'+v.id+'" title="Live showcase video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>';
   }).join('');
 
   /* ---------- inquiry draft ---------- */
